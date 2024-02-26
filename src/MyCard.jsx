@@ -52,8 +52,10 @@ export function MyCard({
               variant="primary"
               style={{
                 fontSize: "15px",
+                backgroundColor: "#141414",
                 borderRadius: "50%",
                 marginRight: "5px",
+                color: "white", 
                 marginTop: "10px",
                 float: "right",
               }}
