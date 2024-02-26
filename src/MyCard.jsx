@@ -11,12 +11,6 @@ export function MyCard({
 }) {
   const currentCardData = tutorialData[index];
 
-  //   function handleDotClick(index) {
-  //     if (index !== tutorialData.step) {
-  //         setStep(index);
-  //       }
-  // }
-
   return (
     <div className="main">
       <Card style={{ width: "18rem", margin: "auto" }}>
