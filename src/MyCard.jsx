@@ -10,6 +10,7 @@ export function MyCard({
   tutorialData,
   handleDotClick,
 }) {
+  
   const currentCardData = tutorialData[index];
   const [leftPosition, setLeftPosition] = useState("0px");
   const [isVisible, setIsVisible] = useState(true);
