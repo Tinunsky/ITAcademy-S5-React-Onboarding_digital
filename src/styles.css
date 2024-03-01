@@ -1,15 +1,6 @@
 .main {
     background-color: #F2F2F2;
     padding: 20px;
-    height: 100vh
+    height: 100vh;
+    overflow: hidden;
   }
-
-.animated {
-  animation: slide 3s;
-  position: relative;
-}
-
-@keyframes slide {
-  from {left: 0;}
-  to {left: -600px;}
-}
