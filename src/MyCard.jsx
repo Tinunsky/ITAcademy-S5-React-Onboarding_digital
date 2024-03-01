@@ -10,7 +10,6 @@ export function MyCard({
   tutorialData,
   handleDotClick,
 }) {
-
   const currentCardData = tutorialData[index];
   const [leftPosition, setLeftPosition] = useState("0px");
   const [isVisible, setIsVisible] = useState(true);
@@ -35,7 +34,7 @@ export function MyCard({
   };
 
   const slideAndLeft = () => {
-    setLeftPosition("800px");
+    setLeftPosition("1000px");
 
     setTimeout(() => {
       setIsVisible(false);
@@ -43,7 +42,7 @@ export function MyCard({
 
     setTimeout(() => {
       setIsVisible(true);
-      setLeftPosition("-800px");
+      setLeftPosition("-1000px");
     }, "250");
 
     setTimeout(() => {
@@ -54,22 +53,22 @@ export function MyCard({
   };
 
   const slideDot = (i) => {
-    setLeftPosition("-800px");
+    setLeftPosition("-1000px");
 
     setTimeout(() => {
       setIsVisible(false);
-    }, "400");
+    }, "200");
 
     setTimeout(() => {
       setIsVisible(true);
-      setLeftPosition("800px");
-    }, "450");
+      setLeftPosition("1000px");
+    }, "250");
 
     setTimeout(() => {
       setIsVisible(true);
       setLeftPosition("0px");
       handleDotClick(i);
-    }, "800");
+    }, "400");
   };
 
   return (
