@@ -20,6 +20,7 @@ export function MyCard({
           style={{
             backgroundColor: currentCardData.bgColor,
             width: "100%",
+            height: "170px",
             paddingTop: "80px",
             paddingBottom: "80px",
             borderTopLeftRadius: "20px",
@@ -37,7 +38,7 @@ export function MyCard({
           <Card.Title style={{ fontWeight: "bold" }}>
             {currentCardData.title}
           </Card.Title>
-          <Card.Text style={{ opacity: 0.8, fontSize: "14px" }}>
+          <Card.Text style={{ opacity: 0.8, fontSize: "14px", height: "50px" }}>
             {currentCardData.description}
           </Card.Text>
 
@@ -47,7 +48,9 @@ export function MyCard({
               style={{
                 fontSize: "15px",
                 backgroundColor: "#141414",
-                borderRadius: "50%",
+                width: "30px",
+                height: "30px",
+                borderRadius: "65px",
                 marginRight: "5px",
                 color: "white", 
                 marginTop: "10px",
@@ -63,7 +66,9 @@ export function MyCard({
               variant="primary"
               style={{
                 fontSize: "15px",
-                borderRadius: "65%",
+                width: "30px",
+                height: "30px",
+                borderRadius: "65px",
                 marginRight: "5px",
                 marginTop: "10px",
                 float: "right",
