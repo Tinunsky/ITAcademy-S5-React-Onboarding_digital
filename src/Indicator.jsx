@@ -9,7 +9,7 @@ const IndicatorWrapper = styled.div`
 const Dot = styled.span`
   display: inline-block;
   width: ${(props) => (props.$isActive ? "15px" : "5px")};
-  height: 5px; 
+  height: 5px;
   margin-right: 6px;
   border-radius: 30px;
   background-color: ${(props) => (props.$isActive ? "#000000" : "#ccc")};
