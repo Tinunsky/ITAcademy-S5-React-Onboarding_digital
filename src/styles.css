@@ -3,3 +3,13 @@
     padding: 20px;
     height: 100vh
   }
+
+.animated {
+  animation: slide 3s;
+  position: relative;
+}
+
+@keyframes slide {
+  from {left: 0;}
+  to {left: -600px;}
+}
