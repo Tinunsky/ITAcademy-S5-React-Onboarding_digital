@@ -14,8 +14,8 @@ export function MyCard({
   const [leftPosition, setLeftPosition] = useState("0px");
   const [isVisible, setIsVisible] = useState(true);
 
-  const slideAndNext = () => {
-    setLeftPosition("-500px");
+  const slide = (leftMin, leftMax, handleFunction) => {
+    setLeftPosition(leftMin);
 
     setTimeout(() => {
       setIsVisible(false);
@@ -23,51 +23,12 @@ export function MyCard({
 
     setTimeout(() => {
       setIsVisible(true);
-      setLeftPosition("1000px");
+      setLeftPosition(leftMax);
     }, "250");
 
     setTimeout(() => {
-      setIsVisible(true);
       setLeftPosition("0px");
-      handleNext();
-    }, "500");
-  };
-
-  const slideAndLeft = () => {
-    setLeftPosition("500px");
-
-    setTimeout(() => {
-      setIsVisible(false);
-    }, "200");
-
-    setTimeout(() => {
-      setIsVisible(true);
-      setLeftPosition("-1000px");
-    }, "250");
-
-    setTimeout(() => {
-      setIsVisible(true);
-      setLeftPosition("0px");
-      handlePrevious();
-    }, "500");
-  };
-
-  const slideDot = (i) => {
-    setLeftPosition("-500px");
-
-    setTimeout(() => {
-      setIsVisible(false);
-    }, "200");
-
-    setTimeout(() => {
-      setIsVisible(true);
-      setLeftPosition("1000px");
-    }, "250");
-
-    setTimeout(() => {
-      setIsVisible(true);
-      setLeftPosition("0px");
-      handleDotClick(i);
+      handleFunction();
     }, "500");
   };
 
@@ -81,6 +42,7 @@ export function MyCard({
             position: "relative",
             transition: "all 0.3s",
             left: leftPosition,
+            opacity: leftPosition === "0px" ? 1 : 0,
           }}
         >
           <Card.Img
@@ -127,7 +89,7 @@ export function MyCard({
                   marginTop: "10px",
                   float: "right",
                 }}
-                onClick={slideAndNext}
+                onClick={() => slide("-500px", "1000px", handleNext)}
               >
                 &#11106;
               </Button>
@@ -144,7 +106,7 @@ export function MyCard({
                   marginTop: "10px",
                   float: "right",
                 }}
-                onClick={slideAndLeft}
+                onClick={() => slide("500px", "-1000px", handlePrevious)}
               >
                 &#11104;
               </Button>
@@ -153,7 +115,9 @@ export function MyCard({
             <Indicator
               tutorialData={tutorialData}
               step={index}
-              handleDotClick={slideDot}
+              handleDotClick={(i) =>
+                slide("-500px", "1000px", () => handleDotClick(i))
+              }
             />
           </Card.Body>
         </Card>
